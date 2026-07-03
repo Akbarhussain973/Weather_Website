@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="h1">Weather App <span id="clouds">🌤</span></h1>
+    <p id="subtitle">Check the weather of any city</p>
+    <form id="weather_form">
+        <input type="text" placeholder="🔍 Search for a city..." id="user_input">
+        <button type="submit" id="button"> Search </button>
+    </form>
+    <div id="loader"></div>
+    <div id="weather">
+        <h2 id="city">🌤 Welcome!</h2>
+
+        <h1 id="temperature">--°C</h1>
+        <p id="condition">Search for any city to get live weather.</p>
+
+        <div id="weather-details">
+            <div class="detail-card">
+                <div class="icon">💧</div>
+                <div class="label">Humidity</div>
+                <div id="humidity" class="value">--%</div>
+            </div>
+
+            <div class="detail-card">
+                <div class="icon">💨</div>
+                <div class="label">Wind</div>
+                <div id="wind" class="value">-- km/h</div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

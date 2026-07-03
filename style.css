@@ -1,0 +1,251 @@
+body {
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    min-height:100vh;
+    padding-top: 50px;
+
+    background-image: url("https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    transition: background-image .6s ease;
+}
+
+
+#h1{
+    color: white;
+    font-size:3rem;
+    margin-bottom:5px;
+}
+
+#subtitle{
+    color:white;
+    margin-top:0;
+    margin-bottom:30px;
+}
+
+#city {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#user_input {
+    color: black;
+    width:280px;
+    padding:14px 18px;
+    border:none;
+    outline:none;
+    border-radius:50px;
+    background:rgba(255,255,255,.85);
+    font-size:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+#user_input:focus{
+    background:white;
+    box-shadow:0 0 20px rgba(45,127,249,.6);
+}
+
+#user_input:hover{
+     transform: translateY(-0.25em);
+}
+
+
+#button {
+    padding:14px 25px;
+    width:120px;
+    border-radius:50px;
+    cursor:pointer;
+    background:#2d7ff9;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+    border:none;
+}
+
+#button:hover {
+    background-color: #2d7ff9;
+    border-color: orange;
+    color:white;
+    transform: translateY(-0.25em);
+    transform:scale(.95);
+    box-shadow: 0 0.5em 0.5em -0.2em orange;
+    padding:8px;
+    
+
+}
+
+#weather{
+    margin-top:30px;
+    background:white;
+    padding:30px;
+    border-radius:40px;
+    width:400px;
+    border: 2px solid black;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(18px);
+    color:white;
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+    border:1px solid rgba(255,255,255,.4);
+    transition:.4s;
+}
+
+#weather:hover{
+    transform:scale(1.02);
+}
+
+#weather_form{
+    display:flex;
+    gap:12px;
+    margin-bottom:20px;
+    
+}
+
+#weather p{
+    text-align:center;
+    font-size:1.1rem;
+}
+
+
+#temperature{
+    font-size:4rem;
+    text-align:center;
+    font-weight:bold;
+    margin:10px 0;
+
+}
+
+#condition{
+    font-size:1.4rem;
+    text-align:center;
+    margin-bottom:30px;
+}
+
+#weather-details{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+#weather-details p{
+    margin:0;
+    font-size:1.2rem;
+}
+
+
+.detail-card{
+    flex:1;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:15px;
+    padding:18px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+
+.detail-card:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,.28);
+
+}
+
+.icon{
+    font-size:2rem;
+    margin-bottom:8px;
+}
+
+.label{
+    font-size:.9rem;
+    opacity:.8;
+}
+
+.value{
+    margin-top:8px;
+    font-size:1.3rem;
+    font-weight:bold;
+}
+
+#loader {
+    display: none;
+    width: 55px;
+    height: 55px;
+    border: 6px solid rgba(255,255,255,.3);
+    border-top: 6px solid white;
+    border-radius: 50%;
+    margin: 25px auto;
+    animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error{
+    color:#ffb3b3;
+}
+
+@media (max-width: 600px){
+
+    body{
+        padding:25px 15px;
+    }
+
+    #h1{
+        font-size:2.2rem;
+        text-align:center;
+    }
+
+    #subtitle{
+        text-align:center;
+        font-size:1rem;
+    }
+
+    #weather_form{
+        flex-direction:column;
+        width:100%;
+        align-items:center;
+    }
+
+    #user_input{
+        width:90%;
+        max-width:320px;
+    }
+
+    #button{
+        width:90%;
+        max-width:320px;
+    }
+
+    #weather{
+        width:90%;
+        padding:20px;
+    }
+
+    #weather-details{
+        flex-direction:column;
+    }
+
+    .detail-card{
+        width:100%;
+    }
+
+    #temperature{
+        font-size:3rem;
+    }
+}
