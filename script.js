@@ -7,7 +7,6 @@ try {
   let condition = document.querySelector("#condition");
   const cityElement = document.querySelector("#city");
   const weatherCard = document.querySelector("#weather");
-  const randomPage = Math.floor(Math.random() * 10) + 1;
   const loader = document.querySelector("#loader");
 
   function getWeatherCondition(code) {
@@ -118,6 +117,7 @@ try {
     loader.style.display = "block";
 
     try {
+      const randomPage = Math.floor(Math.random() * 10) + 1;
       const url = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`;
       const response = await fetch(url);
       const data = await response.json();
@@ -134,24 +134,16 @@ try {
       const response2 = await fetch(url2);
       const data2 = await response2.json();
 
-      const imageHeader = {
-        headers: {
-          Authorization:
-            "SxTjuVzerGfof1ayLcsauSC2F6l0izyNlAABUtqobR8bJho0lB98ihSR",
-        },
-      };
-
       const imageResponse = await fetch(
-        `https://api.pexels.com/v1/search?query=${location.name} city&per_page=1&page=${randomPage}`,
-        imageHeader,
+        `/api/pexels?query=${encodeURIComponent(location.name + " city")}&page=${randomPage}`,
       );
+
       const imageData = await imageResponse.json();
 
       const weatherQuery = getWeatherImageQuery(data2.current.weather_code);
 
       const weatherImageResponse = await fetch(
-        `https://api.pexels.com/v1/search?query=${weatherQuery}&per_page=1&page=${randomPage}`,
-        imageHeader,
+        `/api/pexels?query=${encodeURIComponent(weatherQuery)}&page=${randomPage}`,
       );
 
       const weatherImageData = await weatherImageResponse.json();
@@ -166,7 +158,6 @@ try {
       document.body.style.backgroundImage = `url(${imageUrl})`;
 
       weatherCard.style.backgroundImage = `url(${weatherImageData.photos[0].src.large})`;
-
       weatherCard.style.backgroundSize = "cover";
       weatherCard.style.backgroundPosition = "center";
 
