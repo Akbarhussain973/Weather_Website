@@ -121,4 +121,10 @@ This project is licensed under the MIT License.
 
 ---
 
+## 👨‍💻 Author
+
+**Akbar Hussain**
+
+Software Engineering Student | Learning Full Stack Web Development
+
 ⭐ If you like this project, consider giving it a star!
