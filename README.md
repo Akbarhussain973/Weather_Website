@@ -84,13 +84,13 @@ While building this project, I learned:
 Clone the repository
 
 ```bash
-git clone https://github.com/Akbarhussain973/Weather_Website.git
+git clone https://github.com/Akbarhussain973/weather_website.git
 ```
 
 Go to the project folder
 
 ```bash
-cd Weather_Website
+cd weather_website
 ```
 
 Install Vercel (only if you want to run the serverless function locally)
